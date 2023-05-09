@@ -51,7 +51,7 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
-      <InformationPanel city={city} long={long} lat={lat} results={results} />
+      <InformationPanel city={city} long={long} lat={lat} results={results} timezone={results.timezone}/>
 
       <div className="flex-1 p-5 lg:p-10">
         <div className="p-5">

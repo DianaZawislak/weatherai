@@ -12,7 +12,7 @@ export default function Home() {
           Powered by OpenAI, Next.js 13.3, Tailwind CSS, Tremor 2.0 + More!
         </Subtitle>
         <Subtitle className="text-xl text-center">
-          Build by Diana Zawislak
+          Built by Diana Zawislak
         </Subtitle>
 
         <Divider className="my-10" />
