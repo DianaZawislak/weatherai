@@ -8,12 +8,11 @@ type Props = {
   results: Root;
   lat: string;
   long: string;
-  timezone: string;
 };
 
-function InformationPanel({ city, lat, long, results, timezone }: Props) {
+function InformationPanel({ city, lat, long, results }: Props) {
   return (
-    <div className="bg-gradient-to-br from-[#136dd4] to-[#05358d] text-white p-10">
+    <div className="bg-gradient-to-br from-[#394F68] to-[#183B7E] text-white p-10">
       <div className="pb-5">
         <h1 className="text-6xl font-bold">{decodeURI(city)}</h1>
         <p className="text-xs text-gray-400">
@@ -33,12 +32,11 @@ function InformationPanel({ city, lat, long, results, timezone }: Props) {
               year: "numeric",
               month: "long",
               day: "numeric",
-              timeZone: timezone,
             })}
           </p>
 
           <p className="font-extralight">
-            Timezone: {timezone}
+            Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone}
           </p>
         </div>
 
