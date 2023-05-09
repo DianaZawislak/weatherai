@@ -36,22 +36,15 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
 
   const dataToSend = cleanData(results, city);
 
-  let res;
-
-  try {
-    res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        weatherData: dataToSend,
-      }),
-    });
-  } catch (error) {
-    console.error("Error making API request:", error);
-    // Handle the error and return gracefully
-  }
+  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      weatherData: dataToSend,
+    }),
+  });
 
   const GPTdata = await res.json();
   const { content } = GPTdata;
